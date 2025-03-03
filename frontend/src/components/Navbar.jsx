@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-custom">
             <div className="container-fluid">
-                {/* Brand Name */}
+
                 <Link className="navbar-brand" to="/">🍽 RecipeApp</Link>
 
                 {/* Mobile Toggle Button */}
@@ -24,11 +24,15 @@ const Navbar = () => {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/recipes">Recipes</Link>
+                            <Link className="nav-link" to="/recipe">Recipes</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/create-recipe">Create Recipes</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/contact">Contact</Link>
                         </li>
+
                     </ul>
                 </div>
 
@@ -38,8 +42,12 @@ const Navbar = () => {
                     <Link to="/signup" className="btn btn-primary">Sign Up</Link>
                 </div>
             </div>
+
         </nav>
+
     );
+
 };
+
 
 export default Navbar;

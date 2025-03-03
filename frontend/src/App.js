@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
+import Recipe from "./Pages/Recipe";
+import CreateRecipe from "./Pages/CreateRecipe";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,9 +22,11 @@ function App() {
       <Routes>
         {/* Redirect to Login if not logged in */}
         <Route path="/" element={<Home />} />
+        <Route path="/recipe" element={<Recipe />} />
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/create-recipe" element={<CreateRecipe />} />
       </Routes>
     </Router>
   );
