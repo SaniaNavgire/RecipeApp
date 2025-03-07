@@ -15,11 +15,30 @@ const CreateRecipe = () => {
     };
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Recipe Submitted:", recipe);
-        alert("Recipe submitted successfully!");
-        setRecipe({ name: "", ingredients: "", procedure: "", servings: "", time: "" });
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log("Recipe Submitted:", recipe);
+    //     alert("Recipe submitted successfully!");
+    //     setRecipe({ name: "", ingredients: "", procedure: "", servings: "", time: "" });
+    // };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            await axios.post(
+                "https://recipebackend-8ipd.onrender.com/recipes",
+                { ...recipe },
+                {
+                    headers: { authorization: cookies.access_token },
+                }
+            );
+
+            alert("Recipe Created");
+            navigate("/");
+            setRecipe({ name: "", ingredients: "", procedure: "", servings: "", time: "" });
+        } catch (error) {
+            console.error(error);
+        }
     };
 
 

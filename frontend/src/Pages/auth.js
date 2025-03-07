@@ -24,7 +24,7 @@ const Login = () => {
         event.preventDefault();
 
         try {
-            const result = await axios.post("https://recipebackend-8ipd.onrender.com", {
+            const result = await axios.post("https://recipebackend-8ipd.onrender.com/auth/login", {
                 username,
                 password,
             });
@@ -75,7 +75,7 @@ const Register = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("https://recipebackend-8ipd.onrender.com", {
+            await axios.post("https://recipebackend-8ipd.onrender.com/auth/register", {
                 username,
                 password,
             });

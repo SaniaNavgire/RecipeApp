@@ -1,8 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import "./Navbar.css"; // Import the updated CSS
 
 const Navbar = () => {
+    const [cookies, setCookies] = useCookies(["access_token"]);
+    const navigate = useNavigate();
+
+    // const logout = () => {
+    //     setCookies("access_token", "");
+    //     window.localStorage.clear();
+    //     navigate("/auth");
+    // };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-custom">
             <div className="container-fluid">
@@ -41,6 +51,9 @@ const Navbar = () => {
                     <Link to="/login" className="btn btn-outline-light">Login</Link>
                     <Link to="/signup" className="btn btn-primary">Sign Up</Link>
                 </div>
+                {/* (
+                <button onClick={logout}> Logout </button>
+                ) */}
             </div>
 
         </nav>

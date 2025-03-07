@@ -6,6 +6,8 @@ import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import Recipe from "./Pages/Recipe";
 import CreateRecipe from "./Pages/CreateRecipe";
+import { Auth } from "./Pages/auth";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,6 +29,7 @@ function App() {
         <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/create-recipe" element={<CreateRecipe />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
     </Router>
   );
